@@ -163,14 +163,23 @@ fun PeliculaItem(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // TODO Etapa 1: implementar este composable
-    // Estructura esperada:
-    //
-    // ListItem(
-    //     headlineContent = { ... },
-    //     supportingContent = { ... },
-    //     trailingContent = { ... },
-    //     modifier = modifier.clickable { onClick() }
-    // )
-    // HorizontalDivider()
+    Column {
+        ListItem(
+            modifier = modifier.clickable { onClick() },
+            headlineContent = {
+                Text(text = pelicula.titulo)
+            },
+            supportingContent = {
+                Text("${pelicula.anio} · ${pelicula.genero}")
+            },
+            trailingContent = {
+                Icon(
+                    imageVector = Icons.Default.ChevronRight,
+                    contentDescription = null
+                )
+            }
+        )
+
+        HorizontalDivider()
+    }
 }

@@ -9,21 +9,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-/**
- * ViewModel de la pantalla de listado de películas.
- *
- * ETAPA 3 DEL LAB: completar las funciones cargarPeliculas() y actualizarBusqueda().
- *
- * Comparación con el Lab 2A:
- * El ViewModel cumple el mismo rol: gestiona el estado y se comunica con el repositorio.
- * La diferencia está en cómo expone ese estado. En el Lab 2A usabas propiedades simples
- * (o LiveData en el punto adicional). Acá usás StateFlow con un UiState unificado.
- *
- * MutableStateFlow vs StateFlow:
- * - _uiState (privado): solo el ViewModel puede modificarlo
- * - uiState (público): los composables solo pueden leerlo
- * Este patrón garantiza que el estado fluya en una única dirección.
- */
 class PeliculasViewModel(
     private val repositorio: PeliculasRepositorio = PeliculasRepositorio()
 ) : ViewModel() {
@@ -52,8 +37,42 @@ class PeliculasViewModel(
      * Para manejar errores, rodear la llamada al repositorio con:
      *   try { ... } catch (e: Exception) { ... }
      */
+
     fun cargarPeliculas() {
-        // TODO: implementar
+
+        _uiState.update {
+            it.copy(
+                cargando = true,
+                error = null
+            )
+        }
+
+        viewModelScope.launch {
+
+            try {
+
+                val peliculas = repositorio.obtenerPeliculas()
+
+                _uiState.update {
+                    it.copy(
+                        peliculas = peliculas,
+                        cargando = false
+                    )
+                }
+
+            } catch (e: Exception) {
+
+                _uiState.update {
+                    it.copy(
+                        cargando = false,
+                        error = e.message
+                    )
+                }
+
+            }
+
+        }
+
     }
 
     /**
@@ -69,6 +88,10 @@ class PeliculasViewModel(
      * Acá solo actualizás consulta y Compose se encarga del resto.
      */
     fun actualizarBusqueda(consulta: String) {
-        // TODO: implementar
+
+        _uiState.update {
+            it.copy(consulta = consulta)
+        }
+
     }
 }
