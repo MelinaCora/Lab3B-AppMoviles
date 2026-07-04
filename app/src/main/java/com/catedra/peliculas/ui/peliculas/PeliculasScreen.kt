@@ -41,13 +41,21 @@ import com.catedra.peliculas.data.model.Pelicula
 @Composable
 fun PeliculasScreen(
     onNavegar: (String) -> Unit,
+    onCerrarSesion: () -> Unit,
     viewModel: PeliculasViewModel = viewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Películas") })
+            TopAppBar(
+                title = { Text("Películas") },
+                actions ={
+                    TextButton(onClick = onCerrarSesion){
+                        Text("Salir")
+                    }
+                }
+            )
         }
     ) { paddingValues ->
         when {

@@ -34,7 +34,9 @@ object Rutas {
  * El back stack lo gestiona el NavController automáticamente.
  */
 @Composable
-fun AppNavigation() {
+fun AppNavigation(
+    onCerrarSesion: () -> Unit
+) {
     val navController = rememberNavController()
 
     NavHost(
@@ -47,7 +49,8 @@ fun AppNavigation() {
             PeliculasScreen(
                 onNavegar = { id ->
                     navController.navigate(Rutas.detalle(id))
-                }
+                },
+                onCerrarSesion = onCerrarSesion
             )
         }
 

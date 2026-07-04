@@ -46,7 +46,11 @@ class MainActivity : ComponentActivity() {
 
                     is AuthState.Autenticado -> {
 
-                        AppNavigation()
+                        AppNavigation(
+                            onCerrarSesion = {
+                                authViewModel.cerrarSesion()
+                            }
+                        )
 
                     }
 
