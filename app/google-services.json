@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "118616412600",
+    "project_id": "peliculascompose-86cdb",
+    "storage_bucket": "peliculascompose-86cdb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118616412600:android:d4b660e4e4838a9bfa7f4d",
+        "android_client_info": {
+          "package_name": "com.catedra.peliculas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjdEHjPH-8TPBWlNqJLNrn0FvGbJY4Ci0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
