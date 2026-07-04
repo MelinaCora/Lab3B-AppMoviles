@@ -1,7 +1,7 @@
-package com.catedra.peliculas.ui.AuthState
+package com.catedra.peliculas.ui.auth
 
 sealed class AuthState{
-    object NoAutenicado : AuthState()
+    object NoAutenticado : AuthState()
     object Autenticado : AuthState()
     data class Error(val mensaje: String) : AuthState()
 
