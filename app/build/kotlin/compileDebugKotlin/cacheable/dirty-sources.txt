@@ -1,9 +1,0 @@
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\data\model\Pelicula.kt
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\ui\navigation\AppNavigation.kt
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\ui\theme\Theme.kt
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\ui\detalle\DetalleScreen.kt
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\MainActivity.kt
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\ui\peliculas\PeliculasScreen.kt
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\data\repository\PeliculasRepositorio.kt
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\ui\peliculas\PeliculasUiState.kt
-C:\Users\matis\AndroidStudioProjects\Lab2A_Template\lab2a-tradicional\app\src\main\java\com\catedra\peliculas\ui\peliculas\PeliculasViewModel.kt
