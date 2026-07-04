@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-78:/values-v21/values-v21.xml",
+            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-74:/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mel-c\\.gradle\\caches\\9.0.0\\transforms\\22948512c703742b84c3837292f7e193\\transformed\\credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",

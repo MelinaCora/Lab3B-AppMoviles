@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-78:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-74:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mel-c\\.gradle\\caches\\9.0.0\\transforms\\8197f3f215a74a83b332f4dc991d4ace\\transformed\\ui-release\\res\\values-en-rIN\\values-en-rIN.xml",

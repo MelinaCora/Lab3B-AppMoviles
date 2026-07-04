@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-78:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-74:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mel-c\\.gradle\\caches\\9.0.0\\transforms\\eed301c341719445ce9fe63735f1f93b\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",

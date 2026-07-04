@@ -20,7 +20,7 @@ class PeliculasRepositorio {
 
     fun obtenerPeliculas(): Flow<List<Pelicula>> = callbackFlow {
 
-        val listener = db.collection("peliculas")
+        val listener = db.collection("Peliculas")
             .orderBy("titulo")
             .addSnapshotListener { snapshot, error ->
 
@@ -53,7 +53,7 @@ class PeliculasRepositorio {
 
     suspend fun obtenerPelicula(id: String): Pelicula? {
 
-        val doc = db.collection("peliculas")
+        val doc = db.collection("Peliculas")
             .document(id)
             .get()
             .await()

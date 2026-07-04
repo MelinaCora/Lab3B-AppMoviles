@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-78:/values-v30/values-v30.xml",
+            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-74:/values-v30/values-v30.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mel-c\\.gradle\\caches\\9.0.0\\transforms\\afca1b5b1f90584d7e0645cd72018bad\\transformed\\material3-release\\res\\values-v30\\values-v30.xml",

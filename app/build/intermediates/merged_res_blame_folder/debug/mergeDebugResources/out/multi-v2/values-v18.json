@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-78:/values-v18/values-v18.xml",
+            "outputFile": "com.catedra.peliculas.app-mergeDebugResources-74:/values-v18/values-v18.xml",
             "map": [
                 {
                     "source": "C:\\Users\\mel-c\\.gradle\\caches\\9.0.0\\transforms\\c2695e4d58ee8e7f3f3210c4543f3741\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
