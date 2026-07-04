@@ -6,6 +6,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.tasks.await
 
 /**
  * Repositorio de películas.
@@ -48,5 +49,25 @@ class PeliculasRepositorio {
         awaitClose {
             listener.remove()
         }
+    }
+
+    suspend fun obtenerPelicula(id: String): Pelicula? {
+
+        val doc = db.collection("peliculas")
+            .document(id)
+            .get()
+            .await()
+
+        if (!doc.exists()) return null
+
+        return Pelicula(
+            id = doc.id,
+            titulo = doc.getString("titulo") ?: "",
+            anio = doc.getLong("anio")?.toInt() ?: 0,
+            genero = doc.getString("genero") ?: "",
+            descripcion = doc.getString("descripcion") ?: "",
+            director = doc.getString("director") ?: "",
+            duracionMinutos = doc.getLong("duracionMinutos")?.toInt() ?: 0
+        )
     }
 }
