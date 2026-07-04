@@ -8,10 +8,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import com.google.firebase.firestore.FirebaseFirestore
 
 class AuthViewModel : ViewModel() {
 
     private val auth = FirebaseAuth.getInstance()
+    private val db = FirebaseFirestore.getInstance()
 
     private val _authState = MutableStateFlow<AuthState>(
         if (auth.currentUser != null)
@@ -52,6 +54,17 @@ class AuthViewModel : ViewModel() {
             try {
 
                 auth.createUserWithEmailAndPassword(email, password).await()
+
+                val uid = auth.currentUser!!.uid
+
+                val usuario = hashMapOf(
+                    "email" to email
+                )
+
+                db.collection("usuarios")
+                    .document(uid)
+                    .set(usuario)
+                    .await()
 
                 _authState.value = AuthState.Autenticado
 
