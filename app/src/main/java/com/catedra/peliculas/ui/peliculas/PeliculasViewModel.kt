@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.collect
 
 class PeliculasViewModel(
     private val repositorio: PeliculasRepositorio = PeliculasRepositorio()
@@ -51,13 +52,15 @@ class PeliculasViewModel(
 
             try {
 
-                val peliculas = repositorio.obtenerPeliculas()
+                repositorio.obtenerPeliculas().collect { peliculas ->
 
-                _uiState.update {
-                    it.copy(
-                        peliculas = peliculas,
-                        cargando = false
-                    )
+                    _uiState.update {
+                        it.copy(
+                            peliculas = peliculas,
+                            cargando = false
+                        )
+                    }
+
                 }
 
             } catch (e: Exception) {
@@ -65,7 +68,7 @@ class PeliculasViewModel(
                 _uiState.update {
                     it.copy(
                         cargando = false,
-                        error = e.message
+                        error = e.message ?: "Error al obtener películas"
                     )
                 }
 
